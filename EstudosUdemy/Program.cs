@@ -278,7 +278,6 @@ namespace EstudosUdemy {
             //double porcentagem = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             //funcionario.AumentarSalario(porcentagem);
             //Console.WriteLine($"Dados atualizados: {funcionario}");
-
             //3
 
         }
