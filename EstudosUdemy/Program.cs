@@ -280,6 +280,46 @@ namespace EstudosUdemy {
             //Console.WriteLine($"Dados atualizados: {funcionario}");
             //3
 
+            
+            Console.WriteLine("Entre o número da conta: ");
+            int numeroDaConta = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Entre o titular da conta: ");
+            string nomeDoTitular = Console.ReadLine();
+
+            Console.WriteLine("Haverá depósito inicial (s/n)? ");
+            char valorInicial = Console.ReadKey().KeyChar;
+            Console.WriteLine(" ");
+            ContaBanco novaContaNoBanco ;
+            double deposito;
+            if (valorInicial == 's' || valorInicial == 'S') {
+                Console.WriteLine("Entre o valor de depósito inicial: ");
+                deposito = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                novaContaNoBanco = new ContaBanco(numeroDaConta, nomeDoTitular, deposito);
+            } else {
+                novaContaNoBanco = new ContaBanco(numeroDaConta, nomeDoTitular);
+            }
+
+            Console.WriteLine("Dados da conta: ");
+            Console.WriteLine(novaContaNoBanco);
+            Console.WriteLine();
+            Console.WriteLine("Entre um valor para depósito: ");
+            deposito = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            novaContaNoBanco.Deposito(deposito);
+            Console.WriteLine();
+            Console.WriteLine("Dados da conta atualizados: ");
+            Console.WriteLine(novaContaNoBanco);
+            
+            Console.WriteLine();
+            Console.WriteLine("Entre um valor para saque: ");
+            double saque = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            novaContaNoBanco.Saque(saque);
+            Console.WriteLine();
+            Console.WriteLine("Dados da conta atualizados: ");
+            Console.WriteLine(novaContaNoBanco);
+
+
+
         }
     }
 }
